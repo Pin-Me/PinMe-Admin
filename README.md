@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Laravel SB Admin 2
 
 SB Admin 2 for Laravel.
@@ -81,3 +82,6 @@ Laravel SB Admin 2 uses some open-source third-party libraries/packages, many th
 ## License
 
 Licensed under the [MIT](LICENSE) license.
+=======
+# PinMe-Admin
+>>>>>>> a7e89807c2c3aa11f8e62313add6a72b404e2eff
