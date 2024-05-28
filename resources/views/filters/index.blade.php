@@ -15,25 +15,25 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Client ID</th>
+                        <th>Client</th>
+                        <th>Order</th>
                         <th>Filter Name</th>
+                        <th>Marker</th>
+                        <th>Sound</th>
                         <th>Preview</th>
-                        <th>Filter</th>
-                        <th>Expired Date</th>
-                        <th>Active</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($filters as $filter)
+                @foreach($filters as $filter)
                     <tr>
                         <td>{{ $filter->id }}</td>
-                        <td>{{ $filter->idClient }}</td>
+                        <td>{{ $filter->order->client->nama }}</td>
+                        <td>{{ $filter->order->id }}</td>
                         <td>{{ $filter->namaFilter }}</td>
-                        <td><img src="{{ asset('storage/' . $filter->Preview) }}" alt="Preview" width="50"></td>
-                        <td>{{ $filter->Filter }}</td>
-                        <td>{{ $filter->expiredDate }}</td>
-                        <td>{{ $filter->isActive ? 'Yes' : 'No' }}</td>
+                        <td>{{ $filter->marker }}</td>
+                        <td>{{ $filter->sound }}</td>
+                        <td>{{ $filter->preview }}</td>
                         <td>
                             <a href="{{ route('filters.show', $filter->id) }}" class="btn btn-info btn-sm">View</a>
                             <a href="{{ route('filters.edit', $filter->id) }}" class="btn btn-warning btn-sm">Edit</a>
@@ -44,7 +44,7 @@
                             </form>
                         </td>
                     </tr>
-                    @endforeach
+                @endforeach
                 </tbody>
             </table>
         </div>

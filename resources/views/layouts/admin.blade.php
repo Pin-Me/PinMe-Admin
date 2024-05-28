@@ -57,19 +57,35 @@
             {{ __('Settings') }}
         </div>
 
-        <!-- Nav Item - Profile -->
-        <li class="nav-item {{ Nav::isRoute('profile') }}">
-            <a class="nav-link" href="{{ route('profile') }}">
-                <i class="fas fa-fw fa-user"></i>
-                <span>{{ __('Filter') }}</span>
+        <!-- Nav Item - Clients -->
+        <li class="nav-item {{ Nav::isRoute('clients.index') }}">
+            <a class="nav-link" href="{{ route('clients.index') }}">
+                <i class="fas fa-fw fa-users"></i>
+                <span>Clients</span>
             </a>
         </li>
 
-        <!-- Nav Item - About -->
-        <li class="nav-item {{ Nav::isRoute('about') }}">
-            <a class="nav-link" href="{{ route('about') }}">
-                <i class="fas fa-fw fa-hands-helping"></i>
-                <span>{{ __('Client') }}</span>
+        <!-- Nav Item - Orders -->
+        <li class="nav-item {{ Nav::isRoute('orders.index') }}">
+            <a class="nav-link" href="{{ route('orders.index') }}">
+                <i class="fas fa-fw fa-shopping-cart"></i>
+                <span>Orders</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Filters -->
+        <li class="nav-item {{ Nav::isRoute('filters.index') }}">
+            <a class="nav-link" href="{{ route('filters.index') }}">
+                <i class="fas fa-fw fa-filter"></i>
+                <span>Filters</span>
+            </a>
+        </li>
+        
+        <!-- Nav Item - ARs -->
+        <li class="nav-item {{ Nav::isRoute('ars.index') }}">
+            <a class="nav-link" href="{{ route('ars.index') }}">
+                <i class="fas fa-fw fa-cube"></i>
+                <span>ARs</span>
             </a>
         </li>
 

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Client;
@@ -23,12 +22,12 @@ class ClientController extends Controller
         $request->validate([
             'nama' => 'required|string|max:255',
             'nomor' => 'nullable|string|max:255',
-            'email' => 'nullable|email|max:255',
+            'email' => 'nullable|string|email|max:255',
         ]);
 
         Client::create($request->all());
-
-        return redirect()->route('clients.index')->with('success', 'Client created successfully.');
+        return redirect()->route('clients.index')
+                         ->with('success', 'Client created successfully.');
     }
 
     public function show(Client $client)
@@ -46,17 +45,19 @@ class ClientController extends Controller
         $request->validate([
             'nama' => 'required|string|max:255',
             'nomor' => 'nullable|string|max:255',
-            'email' => 'nullable|email|max:255',
+            'email' => 'nullable|string|email|max:255',
         ]);
 
         $client->update($request->all());
-
-        return redirect()->route('clients.index')->with('success', 'Client updated successfully.');
+        return redirect()->route('clients.index')
+                         ->with('success', 'Client updated successfully.');
     }
 
     public function destroy(Client $client)
     {
         $client->delete();
-        return redirect()->route('clients.index')->with('success', 'Client deleted successfully.');
+        return redirect()->route('clients.index')
+                         ->with('success', 'Client deleted successfully.');
     }
 }
+

@@ -3,33 +3,19 @@
 @section('main-content')
 <h1 class="h3 mb-4 text-gray-800">{{ __('Filter Details') }}</h1>
 
-<div class="card shadow mb-4">
+<div class="card">
+    <div class="card-header">
+        Filter Details
+    </div>
     <div class="card-body">
-        <div class="form-group">
-            <label for="idClient">Client ID</label>
-            <p>{{ $filter->idClient }}</p>
-        </div>
-        <div class="form-group">
-            <label for="namaFilter">Filter Name</label>
-            <p>{{ $filter->namaFilter }}</p>
-        </div>
-        <div class="form-group">
-            <label for="Preview">Preview</label>
-            <img src="{{ asset('storage/' . $filter->Preview) }}" alt="Preview" width="100">
-        </div>
-        <div class="form-group">
-            <label for="Filter">Filter</label>
-            <p>{{ $filter->Filter }}</p>
-        </div>
-        <div class="form-group">
-            <label for="expiredDate">Expired Date</label>
-            <p>{{ $filter->expiredDate }}</p>
-        </div>
-        <div class="form-group">
-            <label for="isActive">Active</label>
-            <p>{{ $filter->isActive ? 'Yes' : 'No' }}</p>
-        </div>
-        <a href="{{ route('filters.index') }}" class="btn btn-primary">Back to List</a>
+        <p><strong>ID:</strong> {{ $filter->id }}</p>
+        <p><strong>Client:</strong> {{ $filter->order && $filter->order->client ? $filter->order->client->nama : 'N/A' }}</p>
+        <p><strong>Order:</strong> {{ $filter->order ? $filter->order->id : 'N/A' }}</p>
+        <p><strong>Filter Name:</strong> {{ $filter->namaFilter }}</p>
+        <p><strong>Marker:</strong> {{ $filter->marker }}</p>
+        <p><strong>Sound:</strong> {{ $filter->sound }}</p>
+        <p><strong>Preview:</strong> {{ $filter->preview }}</p>
+        <a href="{{ route('filters.index') }}" class="btn btn-secondary">Back</a>
     </div>
 </div>
 @endsection

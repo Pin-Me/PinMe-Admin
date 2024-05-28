@@ -1,82 +1,72 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Filter;
+use App\Models\Client;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class FilterController extends Controller
 {
     public function index()
     {
-        $filters = Filter::all();
+        $filters = Filter::with('order.client')->get();
         return view('filters.index', compact('filters'));
     }
 
     public function create()
     {
-        return view('filters.create');
+        $orders = Order::all();
+        return view('filters.create', compact('orders'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'idClient' => 'required|integer|exists:clients,id',
+            'orderId' => 'required|exists:tb_order,id',
             'namaFilter' => 'required|string|max:255',
-            'Preview' => 'required|image|mimes:jpg,png',
-            'Filter' => 'required|string|max:255',
-            'expiredDate' => 'required|date',
-            'isActive' => 'required|boolean',
+            'marker' => 'required|string|max:255',
+            'sound' => 'nullable|string|max:255',
+            'preview' => 'nullable|string|max:255',
         ]);
 
-        $filter = new Filter($request->all());
-
-        if ($request->hasFile('Preview')) {
-            $path = $request->file('Preview')->store('previews', 'public');
-            $filter->Preview = $path;
-        }
-
-        $filter->save();
-
-        return redirect()->route('filters.index')->with('success', 'Filter created successfully.');
+        Filter::create($request->all());
+        return redirect()->route('filters.index')
+                         ->with('success', 'Filter created successfully.');
     }
 
     public function show(Filter $filter)
     {
+        $filter->load('order.client');
         return view('filters.show', compact('filter'));
     }
 
+
     public function edit(Filter $filter)
     {
-        return view('filters.edit', compact('filter'));
+        $orders = Order::all();
+        return view('filters.edit', compact('filter', 'orders'));
     }
 
     public function update(Request $request, Filter $filter)
     {
         $request->validate([
-            'idClient' => 'required|integer|exists:clients,id',
+            'orderId' => 'required|exists:tb_order,id',
             'namaFilter' => 'required|string|max:255',
-            'Preview' => 'nullable|image|mimes:jpg,png',
-            'Filter' => 'required|string|max:255',
-            'expiredDate' => 'required|date',
-            'isActive' => 'required|boolean',
+            'marker' => 'required|string|max:255',
+            'sound' => 'nullable|string|max:255',
+            'preview' => 'nullable|string|max:255',
         ]);
 
-        $filter->fill($request->all());
-
-        if ($request->hasFile('Preview')) {
-            $path = $request->file('Preview')->store('previews', 'public');
-            $filter->Preview = $path;
-        }
-
-        $filter->save();
-
-        return redirect()->route('filters.index')->with('success', 'Filter updated successfully.');
+        $filter->update($request->all());
+        return redirect()->route('filters.index')
+                         ->with('success', 'Filter updated successfully.');
     }
 
     public function destroy(Filter $filter)
     {
         $filter->delete();
-        return redirect()->route('filters.index')->with('success', 'Filter deleted successfully.');
+        return redirect()->route('filters.index')
+                         ->with('success', 'Filter deleted successfully.');
     }
 }

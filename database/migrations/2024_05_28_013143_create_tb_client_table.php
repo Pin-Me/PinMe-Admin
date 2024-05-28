@@ -1,18 +1,19 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateTbClientTable extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
     public function up()
     {
-        Schema::create('clients', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('tb_client', function (Blueprint $table) {
+            $table->id();
             $table->string('nama');
             $table->string('nomor')->nullable();
             $table->string('email')->nullable();
@@ -20,8 +21,13 @@ return new class extends Migration
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::dropIfExists('clients');
+        Schema::dropIfExists('tb_client');
     }
-};
+}

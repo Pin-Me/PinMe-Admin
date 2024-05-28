@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,16 +11,15 @@ class Filter extends Model
     protected $table = 'tb_filter';
 
     protected $fillable = [
-        'idClient',
+        'orderId',
         'namaFilter',
-        'Preview',
-        'Filter',
-        'expiredDate',
-        'isActive'
+        'marker',
+        'sound',
+        'preview'
     ];
 
-    public function client()
+    public function order()
     {
-        return $this->belongsTo(Client::class, 'idClient');
+        return $this->belongsTo(Order::class, 'orderId');
     }
 }
