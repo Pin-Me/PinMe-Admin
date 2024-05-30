@@ -13,7 +13,7 @@
     </div>
 @endif
 
-<form action="{{ route('filters.update', $filter->id) }}" method="POST">
+<form action="{{ route('filters.update', $filter->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="form-group">
@@ -30,15 +30,15 @@
     </div>
     <div class="form-group">
         <label for="marker">Marker</label>
-        <input type="text" class="form-control" id="marker" name="marker" value="{{ $filter->marker }}">
+        <input type="file" class="form-control" id="marker" name="marker">
     </div>
     <div class="form-group">
         <label for="sound">Sound</label>
-        <input type="text" class="form-control" id="sound" name="sound" value="{{ $filter->sound }}">
+        <input type="file" class="form-control" id="sound" name="sound">
     </div>
     <div class="form-group">
         <label for="preview">Preview</label>
-        <input type="text" class="form-control" id="preview" name="preview" value="{{ $filter->preview }}">
+        <input type="file" class="form-control" id="preview" name="preview">
     </div>
     <button type="submit" class="btn btn-primary">Update</button>
 </form>

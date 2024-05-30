@@ -18,6 +18,7 @@
                         <th>Client</th>
                         <th>Expired Date</th>
                         <th>Is Active</th>
+                        <th>Status</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -28,6 +29,7 @@
                         <td>{{ $order->client->nama }}</td>
                         <td>{{ $order->expiredDate }}</td>
                         <td>{{ $order->isActive ? 'Yes' : 'No' }}</td>
+                        <td>{{ $order->status }}</td>
                         <td>
                             <a href="{{ route('orders.show', $order->id) }}" class="btn btn-info btn-sm">View</a>
                             <a href="{{ route('orders.edit', $order->id) }}" class="btn btn-warning btn-sm">Edit</a>

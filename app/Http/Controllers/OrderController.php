@@ -25,6 +25,7 @@ class OrderController extends Controller
             'clientId' => 'required|exists:tb_client,id',
             'expiredDate' => 'required|date',
             'isActive' => 'required|boolean',
+            'status' => 'required|string|max:255',
         ]);
 
         Order::create($request->all());
@@ -49,6 +50,7 @@ class OrderController extends Controller
             'clientId' => 'required|exists:tb_client,id',
             'expiredDate' => 'required|date',
             'isActive' => 'required|boolean',
+            'status' => 'required|string|max:255',
         ]);
 
         $order->update($request->all());

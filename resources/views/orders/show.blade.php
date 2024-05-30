@@ -12,6 +12,7 @@
         <p><strong>Client:</strong> {{ $order->client->nama }}</p>
         <p><strong>Expired Date:</strong> {{ $order->expiredDate }}</p>
         <p><strong>Is Active:</strong> {{ $order->isActive ? 'Yes' : 'No' }}</p>
+        <p><strong>Status:</strong> {{ $order->status }}</p>
         <a href="{{ route('orders.index') }}" class="btn btn-secondary">Back</a>
     </div>
 </div>

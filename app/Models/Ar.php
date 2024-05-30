@@ -3,6 +3,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Ar extends Model
 {
@@ -15,11 +16,16 @@ class Ar extends Model
         'ar',
         'positionX',
         'positionY',
-        'positionZ',
+        'positionZ'
     ];
 
     public function filter()
     {
         return $this->belongsTo(Filter::class, 'filterId');
+    }
+
+    public function getArUrlAttribute()
+    {
+        return $this->ar ? url('storage/' . $this->ar) : null;
     }
 }

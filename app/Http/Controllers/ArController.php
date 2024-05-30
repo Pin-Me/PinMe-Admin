@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Ar;
 use App\Models\Filter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ArController extends Controller
 {
@@ -23,13 +24,22 @@ class ArController extends Controller
     {
         $request->validate([
             'filterId' => 'required|exists:tb_filter,id',
-            'ar' => 'nullable|string|max:255',
+            'ar' => 'required|file|mimes:jpg,jpeg,png,obj',
             'positionX' => 'nullable|numeric',
             'positionY' => 'nullable|numeric',
-            'positionZ' => 'nullable|numeric',
+            'positionZ' => 'nullable|numeric'
         ]);
 
-        Ar::create($request->all());
+        $arPath = $request->file('ar')->store('uploads/ars/objects', 'public');
+
+        Ar::create([
+            'filterId' => $request->filterId,
+            'ar' => $arPath,
+            'positionX' => $request->positionX,
+            'positionY' => $request->positionY,
+            'positionZ' => $request->positionZ
+        ]);
+
         return redirect()->route('ars.index')
                          ->with('success', 'AR created successfully.');
     }
@@ -49,19 +59,33 @@ class ArController extends Controller
     {
         $request->validate([
             'filterId' => 'required|exists:tb_filter,id',
-            'ar' => 'nullable|string|max:255',
+            'ar' => 'nullable|file|mimes:jpg,jpeg,png,obj',
             'positionX' => 'nullable|numeric',
             'positionY' => 'nullable|numeric',
-            'positionZ' => 'nullable|numeric',
+            'positionZ' => 'nullable|numeric'
         ]);
 
-        $ar->update($request->all());
+        $arPath = $ar->ar;
+        if ($request->hasFile('ar')) {
+            Storage::disk('public')->delete($ar->ar);
+            $arPath = $request->file('ar')->store('uploads/ars/objects', 'public');
+        }
+
+        $ar->update([
+            'filterId' => $request->filterId,
+            'ar' => $arPath,
+            'positionX' => $request->positionX,
+            'positionY' => $request->positionY,
+            'positionZ' => $request->positionZ
+        ]);
+
         return redirect()->route('ars.index')
                          ->with('success', 'AR updated successfully.');
     }
 
     public function destroy(Ar $ar)
     {
+        Storage::disk('public')->delete($ar->ar);
         $ar->delete();
         return redirect()->route('ars.index')
                          ->with('success', 'AR deleted successfully.');

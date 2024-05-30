@@ -16,7 +16,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Filter</th>
-                        <th>AR</th>
+                        <th>AR Object</th>
                         <th>Position X</th>
                         <th>Position Y</th>
                         <th>Position Z</th>
@@ -28,7 +28,7 @@
                     <tr>
                         <td>{{ $ar->id }}</td>
                         <td>{{ $ar->filter->namaFilter }}</td>
-                        <td>{{ $ar->ar }}</td>
+                        <td>{{ $ar->ar ? 'true' : 'false' }}</td>
                         <td>{{ $ar->positionX }}</td>
                         <td>{{ $ar->positionY }}</td>
                         <td>{{ $ar->positionZ }}</td>

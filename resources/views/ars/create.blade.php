@@ -13,7 +13,7 @@
     </div>
 @endif
 
-<form action="{{ route('ars.store') }}" method="POST">
+<form action="{{ route('ars.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
         <label for="filterId">Filter</label>
@@ -24,20 +24,20 @@
         </select>
     </div>
     <div class="form-group">
-        <label for="ar">AR</label>
-        <input type="text" class="form-control" id="ar" name="ar" value="{{ old('ar') }}">
+        <label for="ar">AR Object</label>
+        <input type="file" class="form-control" id="ar" name="ar">
     </div>
     <div class="form-group">
         <label for="positionX">Position X</label>
-        <input type="number" step="any" class="form-control" id="positionX" name="positionX" value="{{ old('positionX') }}">
+        <input type="number" class="form-control" id="positionX" name="positionX" value="{{ old('positionX') }}">
     </div>
     <div class="form-group">
         <label for="positionY">Position Y</label>
-        <input type="number" step="any" class="form-control" id="positionY" name="positionY" value="{{ old('positionY') }}">
+        <input type="number" class="form-control" id="positionY" name="positionY" value="{{ old('positionY') }}">
     </div>
     <div class="form-group">
         <label for="positionZ">Position Z</label>
-        <input type="number" step="any" class="form-control" id="positionZ" name="positionZ" value="{{ old('positionZ') }}">
+        <input type="number" class="form-control" id="positionZ" name="positionZ" value="{{ old('positionZ') }}">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

@@ -13,7 +13,7 @@
     </div>
 @endif
 
-<form action="{{ route('ars.update', $ar->id) }}" method="POST">
+<form action="{{ route('ars.update', $ar->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="form-group">
@@ -25,20 +25,20 @@
         </select>
     </div>
     <div class="form-group">
-        <label for="ar">AR</label>
-        <input type="text" class="form-control" id="ar" name="ar" value="{{ $ar->ar }}">
+        <label for="ar">AR Object</label>
+        <input type="file" class="form-control" id="ar" name="ar">
     </div>
     <div class="form-group">
         <label for="positionX">Position X</label>
-        <input type="number" step="any" class="form-control" id="positionX" name="positionX" value="{{ $ar->positionX }}">
+        <input type="number" class="form-control" id="positionX" name="positionX" value="{{ $ar->positionX }}">
     </div>
     <div class="form-group">
         <label for="positionY">Position Y</label>
-        <input type="number" step="any" class="form-control" id="positionY" name="positionY" value="{{ $ar->positionY }}">
+        <input type="number" class="form-control" id="positionY" name="positionY" value="{{ $ar->positionY }}">
     </div>
     <div class="form-group">
         <label for="positionZ">Position Z</label>
-        <input type="number" step="any" class="form-control" id="positionZ" name="positionZ" value="{{ $ar->positionZ }}">
+        <input type="number" class="form-control" id="positionZ" name="positionZ" value="{{ $ar->positionZ }}">
     </div>
     <button type="submit" class="btn btn-primary">Update</button>
 </form>

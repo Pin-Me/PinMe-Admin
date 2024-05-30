@@ -31,9 +31,9 @@
                         <td>{{ $filter->order->client->nama }}</td>
                         <td>{{ $filter->order->id }}</td>
                         <td>{{ $filter->namaFilter }}</td>
-                        <td>{{ $filter->marker }}</td>
-                        <td>{{ $filter->sound }}</td>
-                        <td>{{ $filter->preview }}</td>
+                        <td>{{ $filter->marker ? 'true' : 'false' }}</td>
+                        <td>{{ $filter->sound ? 'true' : 'false' }}</td>
+                        <td>{{ $filter->preview ? 'true' : 'false' }}</td>
                         <td>
                             <a href="{{ route('filters.show', $filter->id) }}" class="btn btn-info btn-sm">View</a>
                             <a href="{{ route('filters.edit', $filter->id) }}" class="btn btn-warning btn-sm">Edit</a>

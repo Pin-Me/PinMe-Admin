@@ -35,6 +35,14 @@
             <option value="0" {{ !$order->isActive ? 'selected' : '' }}>No</option>
         </select>
     </div>
+    <div class="form-group">
+        <label for="status">Status</label>
+        <select class="form-control" id="status" name="status">
+            <option value="Baru" {{ $order->status == 'Baru' ? 'selected' : '' }}>Baru</option>
+            <option value="Lama" {{ $order->status == 'Lama' ? 'selected' : '' }}>Lama</option>
+            <option value="Selesai" {{ $order->status == 'Selesai' ? 'selected' : '' }}>Selesai</option>
+        </select>
+    </div>
     <button type="submit" class="btn btn-primary">Update</button>
 </form>
 @endsection

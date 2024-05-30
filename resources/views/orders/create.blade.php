@@ -34,6 +34,14 @@
             <option value="0">No</option>
         </select>
     </div>
+    <div class="form-group">
+        <label for="status">Status</label>
+        <select class="form-control" id="status" name="status">
+            <option value="Baru">Baru</option>
+            <option value="Lama">Lama</option>
+            <option value="Selesai">Selesai</option>
+        </select>
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 @endsection

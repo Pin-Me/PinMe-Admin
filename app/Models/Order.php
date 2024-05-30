@@ -13,7 +13,8 @@ class Order extends Model
     protected $fillable = [
         'clientId',
         'expiredDate',
-        'isActive'
+        'isActive',
+        'status'
     ];
 
     public function client()
@@ -21,4 +22,3 @@ class Order extends Model
         return $this->belongsTo(Client::class, 'clientId');
     }
 }
-
