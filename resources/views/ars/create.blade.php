@@ -25,7 +25,7 @@
     </div>
     <div class="form-group">
         <label for="ar">AR Object</label>
-        <input type="file" class="form-control" id="ar" name="ar">
+        <input type="file" class="form-control" id="ar" name="ar" accept=".jpg,.jpeg,.png,.obj,.glb">
     </div>
     <div class="form-group">
         <label for="positionX">Position X</label>

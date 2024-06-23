@@ -26,12 +26,12 @@ class FilterController extends Controller
             'orderId' => 'required|exists:tb_order,id',
             'namaFilter' => 'required|string|max:255',
             'marker' => 'required|file|mimes:jpg,jpeg,png',
-            'sound' => 'nullable|file|mimes:mp3,wav',
+            'sound' => 'nullable|string|max:255',
             'preview' => 'nullable|file|mimes:jpg,jpeg,png'
         ]);
 
         $markerPath = $request->file('marker')->store('uploads/filters/markers', 'public');
-        $soundPath = $request->file('sound') ? $request->file('sound')->store('uploads/filters/sounds', 'public') : null;
+        $soundPath = $request->sound;
         $previewPath = $request->file('preview') ? $request->file('preview')->store('uploads/filters/previews', 'public') : null;
 
         Filter::create([
@@ -63,7 +63,7 @@ class FilterController extends Controller
             'orderId' => 'required|exists:tb_order,id',
             'namaFilter' => 'required|string|max:255',
             'marker' => 'nullable|file|mimes:jpg,jpeg,png',
-            'sound' => 'nullable|file|mimes:mp3,wav',
+            'sound' => 'nullable|string|max:255',
             'preview' => 'nullable|file|mimes:jpg,jpeg,png'
         ]);
 
@@ -73,12 +73,7 @@ class FilterController extends Controller
             $markerPath = $request->file('marker')->store('uploads/filters/markers', 'public');
         }
 
-        $soundPath = $filter->sound;
-        if ($request->hasFile('sound')) {
-            Storage::disk('public')->delete($filter->sound);
-            $soundPath = $request->file('sound')->store('uploads/filters/sounds', 'public');
-        }
-
+        $soundPath = $request->sound;
         $previewPath = $filter->preview;
         if ($request->hasFile('preview')) {
             Storage::disk('public')->delete($filter->preview);

@@ -36,7 +36,7 @@ class Filter extends Model
 
     public function getSoundUrlAttribute()
     {
-        return $this->sound ? url('storage/' . $this->sound) : null;
+        return $this->sound;
     }
 
     public function getPreviewUrlAttribute()

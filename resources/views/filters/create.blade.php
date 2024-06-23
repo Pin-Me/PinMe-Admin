@@ -33,7 +33,7 @@
     </div>
     <div class="form-group">
         <label for="sound">Sound</label>
-        <input type="file" class="form-control" id="sound" name="sound">
+        <input type="text" class="form-control" id="sound" name="sound" value="{{ old('sound') }}">
     </div>
     <div class="form-group">
         <label for="preview">Preview</label>

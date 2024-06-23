@@ -22,9 +22,22 @@ class ArController extends Controller
 
     public function store(Request $request)
     {
+        // Validasi manual untuk mime type .glb
         $request->validate([
             'filterId' => 'required|exists:tb_filter,id',
-            'ar' => 'required|file|mimes:jpg,jpeg,png,obj',
+            'ar' => [
+                'required',
+                'file',
+                function ($attribute, $value, $fail) {
+                    $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/jpg', 'application/octet-stream'];
+                    $allowedExtensions = ['jpg', 'jpeg', 'png', 'obj', 'glb'];
+                    $extension = $value->getClientOriginalExtension();
+                    $mimeType = $value->getMimeType();
+                    if (!in_array($extension, $allowedExtensions) || !in_array($mimeType, $allowedMimeTypes)) {
+                        $fail("The $attribute must be a file of type: jpg, jpeg, png, obj, glb.");
+                    }
+                },
+            ],
             'positionX' => 'nullable|numeric',
             'positionY' => 'nullable|numeric',
             'positionZ' => 'nullable|numeric'
@@ -57,9 +70,22 @@ class ArController extends Controller
 
     public function update(Request $request, Ar $ar)
     {
+        // Validasi manual untuk mime type .glb
         $request->validate([
             'filterId' => 'required|exists:tb_filter,id',
-            'ar' => 'nullable|file|mimes:jpg,jpeg,png,obj',
+            'ar' => [
+                'nullable',
+                'file',
+                function ($attribute, $value, $fail) {
+                    $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/jpg', 'application/octet-stream'];
+                    $allowedExtensions = ['jpg', 'jpeg', 'png', 'obj', 'glb'];
+                    $extension = $value->getClientOriginalExtension();
+                    $mimeType = $value->getMimeType();
+                    if (!in_array($extension, $allowedExtensions) || !in_array($mimeType, $allowedMimeTypes)) {
+                        $fail("The $attribute must be a file of type: jpg, jpeg, png, obj, glb.");
+                    }
+                },
+            ],
             'positionX' => 'nullable|numeric',
             'positionY' => 'nullable|numeric',
             'positionZ' => 'nullable|numeric'

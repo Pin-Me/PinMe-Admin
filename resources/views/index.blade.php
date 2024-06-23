@@ -353,16 +353,16 @@
             </section>
             <!-- how-app-work -->
             <!-- video-area -->
-            <!--<section class="video-area pt-100 pb-100 p-relative">
+            <section class="video-area pt-100 pb-100 p-relative" style="margin-bottom: 200px;">
                 <div class="video-img2">
 
-                    <img src="img/bg/video-img.png" alt="mobile" />
+                    <img src="img2/bg/VideoBG.png" alt="mobile" style="width: 921px; height: 518px;"/>
 
-                    <a href="https://www.youtube.com/watch?v=7e90gBu4pas" class="popup-video"><img
-                            src="img/bg/play-btn.png" alt="play-btn.png"></a>
+                    <a href="https://www.youtube.com/watch?v=v_97_GMT2aI" class="popup-video"><img
+                            src="img2/bg/play-btn.png" alt="play-btn.png"></a>
                 </div>
                 <div class="video-img3">
-                    <img src="img/shape/header-sape5.png" alt="header-sape4">
+                    <img src="img2/shape/header-sape5.png" alt="header-sape4">
                 </div>
                 <div class="container">
                     <div class="row">
@@ -391,11 +391,10 @@
                     <!-- Swiper -->
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="img2/gallery/3.svg" alt="slide 1"></div>
-                            <div class="swiper-slide"><img src="img2/gallery/1.svg" alt="slide 1"></div>
-                            <div class="swiper-slide"><img src="img2/gallery/2.svg" alt="slide 1"></div>
-                            <div class="swiper-slide"><img src="img2/gallery/3.svg" alt="slide 1"></div>
-                            <div class="swiper-slide"><img src="img2/gallery/2.jpg" alt="slide 1"></div>
+                            <div class="swiper-slide"><img src="img2/gallery/SS1.jpeg" alt="slide 1" style="width: 310px; height: 635px;"></div>
+                            <div class="swiper-slide"><img src="img2/gallery/SS2.jpg" alt="slide 2" style="width: 310px; height: 635px;"></div>
+                            <div class="swiper-slide"><img src="img2/gallery/SS3.jpg" alt="slide 3" style="width: 310px; height: 635px;"></div>
+                            <div class="swiper-slide"><img src="img2/gallery/SS4.jpg" alt="slide 4" style="width: 310px; height: 635px;"></div>
                         </div>
                         <!-- Add Pagination -->
                         <div class="swiper-pagination"></div>
@@ -447,70 +446,79 @@
                                 <h2>Our Pricing Plans</h2>
                             </div>
                         </div>
-
-
-
                     </div>
                     <div class="row justify-content-center">
-                        <!-- Menggunakan justify-content-center untuk memusatkan kotak -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="pricing-box text-center mb-60">
-                                <div class="pricing-head">
-                                    <h4>Start From</h4>
-                                    <div class="pricing-amount">
-                                        <div class="monthly_price">
-                                            <span class="price">Rp. 20</span>
-                                            <span class="subscription">.000</span>
-                                        </div>
+    <!-- Menggunakan justify-content-center untuk memusatkan kotak -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="pricing-box text-center mb-60">
+                            <div class="pricing-head">
+                                <h4>Start From</h4>
+                                <div class="pricing-amount">
+                                    <div class="monthly_price">
+                                        <span class="price">Rp. 20</span>
+                                        <span class="subscription">.000</span>
                                     </div>
-                                    <h5>Filter AR 2D</h5>
                                 </div>
-                                <div class="pricing-btn">
-                                    <a href="#" class="btn">Start Now</a>
-                                </div>
+                                <h5>Filter AR 2D</h5>
+                                <ul>
+                                    <li>Filter AR 2D</li>
+                                    <li>7 Hari Hosting</li>
+                                </ul>
                             </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6">
-                            <div class="pricing-box active text-center mb-60">
-                                <div class="poppuler">
-                                    <span class="btn">Poppuler</span>
-                                </div>
-                                <div class="pricing-head">
-                                    <h4>Start From</h4>
-                                    <div class="pricing-amount">
-                                        <div class="monthly_price">
-                                            <span class="price">Rp. 50</span>
-                                            <span class="subscription">.000</span>
-                                        </div>
-                                    </div>
-                                    <h5>Filter AR 3D</h5>
-                                </div>
-                                <div class="pricing-btn">
-                                    <a href="#" class="btn">Start Now</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6">
-                            <div class="pricing-box active text-center mb-60">
-                                <div class="pricing-head">
-                                    <h4>Start From</h4>
-                                    <div class="pricing-amount">
-                                        <div class="monthly_price">
-                                            <span class="price">Rp. 60</span>
-                                            <span class="subscription">.000</span>
-                                        </div>
-                                    </div>
-                                    <h5>Filter AR 4D</h5>
-                                    <br>
-                                </div>
-                                <div class="pricing-btn">
-                                    <a href="#" class="btn">Start Now</a>
-                                </div>
+                            <div class="pricing-btn">
+                                <a href="https://wa.me/6285156375966" class="btn">Start Now</a>
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="pricing-box active text-center mb-60">
+                            <div class="poppuler">
+                                <span class="btn">Poppuler</span>
+                            </div>
+                            <div class="pricing-head">
+                                <h4>Start From</h4>
+                                <div class="pricing-amount">
+                                    <div class="monthly_price">
+                                        <span class="price">Rp. 50</span>
+                                        <span class="subscription">.000</span>
+                                    </div>
+                                </div>
+                                <h5>Filter AR 3D</h5>
+                                <ul>
+                                <li>Filter AR 3D</li>
+                                    <li>14 Hari Hosting</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-btn">
+                                <a href="https://wa.me/6285156375966" class="btn">Start Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="pricing-box active text-center mb-60">
+                            <div class="pricing-head">
+                                <h4>Start From</h4>
+                                <div class="pricing-amount">
+                                    <div class="monthly_price">
+                                        <span class="price">Rp. 60</span>
+                                        <span class="subscription">.000</span>
+                                    </div>
+                                </div>
+                                <h5>Filter AR 4D</h5>
+                                <ul>
+                                <li>Filter AR 3D</li>
+                                    <li>14 Hari Hosting</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-btn">
+                                <a href="https://wa.me/6285156375966" class="btn">Start Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
                 </div>
             </section>
