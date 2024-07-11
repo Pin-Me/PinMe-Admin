@@ -27,6 +27,13 @@
             margin-bottom: 40px;
             /* Menambahkan margin bawah pada pricing-head */
         }
+        /* Default style for the image */
+        .responsive-img {
+            width: 100%;
+            height: auto;
+            max-width: 651px;
+            max-height: 750px;
+        }
     </style>
 </head>
 
@@ -73,7 +80,7 @@
                         </div>
                         <div class="col-xl-2 text-right d-none d-xl-block">
                             <div class="header-btn second-header-btn">
-                                <a href="#" class="btn">Download</a>
+                                <a href="https://play.google.com/store/apps/details?id=com.pkm.pinme" class="btn">Download</a>
                             </div>
                         </div>
                     </div>
@@ -88,34 +95,23 @@
         <section id="parallax" class="slider-area slider-bg2 second-slider-bg d-flex fix"
             style="background-image: url(img2/bg/pink-header-bg2.png); background-position:right 0; background-repeat: no-repeat; background-size: 65%;">
 
-            <div class="slider-shape ss-one layer" data-depth="0.10"><img src="img2/shape/header-sape.png" alt="shape">
-            </div>
-
+            <div class="slider-shape ss-one layer" data-depth="0.10"><img src="img2/shape/header-sape.png" alt="shape"></div>
             <div class="slider-shape ss-eight layer" data-depth="0.50"></div>
-
-
 
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="col-xl-2 col-lg-2">
-                        </div>
+                        <div class="col-xl-2 col-lg-2"></div>
                         <div class="slider-content second-slider-content left-center">
-
                             <ul class="small-title mb-30">
                                 <li>New</li>
                                 <li>Best Mobile App</li>
                             </ul>
                             <h2 data-animation="fadeInUp" data-delay=".4s">Best Mobile App <span>Filter AR</span></h2>
-                            <p data-animation="fadeInUp" data-delay=".6s">Step into a whole new experience where
-                                <br></br>printed media comes to life.
-                            </p>
-                            <br></br>
-                            <!-- <div class="slider-btn mt-30 mb-30">
-                                <a href="#" class="btn ss-btn" data-animation="fadeInUp" data-delay=".8s">Read More</a>
-                            </div> -->
+                            <p data-animation="fadeInUp" data-delay=".6s">Step into a whole new experience where<br>printed media comes to life.</p>
+                            <br>
                             <div class="image_wrapper">
-                                <a class="image_google" href="https://play.google.com/store/games">
+                                <a class="image_google" href="https://play.google.com/store/apps/details?id=com.pkm.pinme">
                                     <figure class="mb-0 image_google">
                                         <img class="img-fluid" src="img/icon/bannergoogle-img2.png" alt="">
                                     </figure>
@@ -124,12 +120,12 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <img src="img2/mockup/2.png" alt="shape" class="s-img" style="width: 651px; height: 750px;">
+                        <img src="img2/mockup/2.png" alt="shape" class="img-fluid">
                     </div>
                 </div>
-
             </div>
         </section>
+
         <!-- slider-area-end -->
         <!-- services-area -->
         <!-- <section id="about" class="services-area services-bg pt-25 pb-20"
@@ -218,11 +214,9 @@
         <!-- Features -->
 
         <section class="basic-feature" id="basic-feature">
-            <section class="choose-area pt-100 pb-60 p-relative" style="background-image: url(img2/shape/header-sape3.png); background-position: right center;
-                        background-size: auto;background-repeat: no-repeat;">
-                <div class="chosse-img" style="background-image:url(img2/bg/easy-m-bg2.png)"></div>
-                <div class="chosse-img2"><img src="img2/mockup/Untitled design (1) (1).png" alt="mobile"
-                        style="width: 631px; height: 551px;"></div>
+            <section class="choose-area pt-100 pb-60 p-relative" style="background-image: url(img2/shape/header-sape3.png); background-position: right center; background-size: auto; background-repeat: no-repeat;">
+                <div class="chosse-img responsive-bg"></div>
+                <div class="chosse-img2"><img src="img2/mockup/Untitled design (1) (1).png" alt="mobile" class="img-fluid" style="width: 820px;"></div>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -346,7 +340,7 @@
                             </div>
                         </div>
                         <div class="col-xl-6">
-                            <img src="img2/mockup/3.png" alt="app-work-img" class="img">
+                            <img src="img2/mockup/3.png" alt="app-work-img" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -356,13 +350,13 @@
             <section class="video-area pt-100 pb-100 p-relative" style="margin-bottom: 200px;">
                 <div class="video-img2">
 
-                    <img src="img2/bg/VideoBG.png" alt="mobile" style="width: 921px; height: 518px;"/>
+                    <img src="img2/bg/VideoBG.png" class="img-fluid" style="width: 80%;"/>
 
                     <a href="https://www.youtube.com/watch?v=v_97_GMT2aI" class="popup-video"><img
                             src="img2/bg/play-btn.png" alt="play-btn.png"></a>
                 </div>
                 <div class="video-img3">
-                    <img src="img2/shape/header-sape5.png" alt="header-sape4">
+                    <img src="img2/shape/header-sape5.png" class="img-fluid" alt="header-sape4">
                 </div>
                 <div class="container">
                     <div class="row">

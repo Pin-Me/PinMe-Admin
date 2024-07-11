@@ -29,15 +29,15 @@
     </div>
     <div class="form-group">
         <label for="positionX">Position X</label>
-        <input type="number" class="form-control" id="positionX" name="positionX" value="{{ old('positionX') }}">
+        <input type="number" class="form-control" id="positionX" name="positionX" step="any" value="{{ old('positionX') }}">
     </div>
     <div class="form-group">
         <label for="positionY">Position Y</label>
-        <input type="number" class="form-control" id="positionY" name="positionY" value="{{ old('positionY') }}">
+        <input type="number" class="form-control" id="positionY" name="positionY" step="any" value="{{ old('positionY') }}">
     </div>
     <div class="form-group">
         <label for="positionZ">Position Z</label>
-        <input type="number" class="form-control" id="positionZ" name="positionZ" value="{{ old('positionZ') }}">
+        <input type="number" class="form-control" id="positionZ" name="positionZ" step="any" value="{{ old('positionZ') }}">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

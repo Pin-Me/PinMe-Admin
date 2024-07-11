@@ -30,15 +30,15 @@
     </div>
     <div class="form-group">
         <label for="positionX">Position X</label>
-        <input type="number" class="form-control" id="positionX" name="positionX" value="{{ $ar->positionX }}">
+        <input type="number" class="form-control" id="positionX" name="positionX" step="any" value="{{ $ar->positionX }}">
     </div>
     <div class="form-group">
         <label for="positionY">Position Y</label>
-        <input type="number" class="form-control" id="positionY" name="positionY" value="{{ $ar->positionY }}">
+        <input type="number" class="form-control" id="positionY" name="positionY" step="any" value="{{ $ar->positionY }}">
     </div>
     <div class="form-group">
         <label for="positionZ">Position Z</label>
-        <input type="number" class="form-control" id="positionZ" name="positionZ" value="{{ $ar->positionZ }}">
+        <input type="number" class="form-control" id="positionZ" name="positionZ" step="any" value="{{ $ar->positionZ }}">
     </div>
     <button type="submit" class="btn btn-primary">Update</button>
 </form>
